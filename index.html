@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cecilia Yiyue</title>
     
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -33,55 +33,144 @@
             margin: 20px 0;
         }
 
-        /* Projects & Contact Layout */
-        .content {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Project Images */
-        .project img {
-            width: 100px;
+        /* DiceBear Avatar */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #333;
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5)); /* New CSS Effect */
+        }
+
+        /* Button Styling */
+        .avatar-button {
             margin-top: 10px;
-        }
-
-        /* Links Styling */
-        a {
-            color: #ffeb3b;
-            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
         }
 
-        a:hover {
-            color: #ff9800;
-            text-decoration: underline;
+        .avatar-button:hover {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Contact Styling */
-        .contact ul {
-            list-style-type: none;
-            padding: 0;
+        .avatar-button:active {
+            transform: translateY(1px);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .contact li {
-            margin: 10px 0;
-        }
+       /* Project Container */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
 
-        @media (max-width: 768px) {
-            .hk-pic {
-                width: 120px; /* Slightly smaller profile pic */
-            }
 
-            body {
-                padding: 10px;
-            }
-        }
+     /* Details Styling */
+     .connect-details {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffeb3b;
+    }
+
+    .connect-details summary {
+        cursor: pointer;
+        color: #ffeb3b;
+        text-decoration: none;
+    }
+
+    .connect-details summary:hover {
+        color: #ff9800;
+        text-decoration: underline;
+    }
+
+    /* Expanded Text */
+    .connect-details p {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .connect-details a {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffeb3b;
+        text-decoration: none;
+    }
+
+    .connect-details a:hover {
+        color: #ff9800;
+    }
+
+}
+
+/* Project Box */
+.project-box {
+    background: linear-gradient(145deg, #e3e3e3, #ffffff);
+    padding: 25px;
+    border-radius: 20px;
+    width: 45%;
+    min-width: 320px;
+    text-align: center;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), 
+                -8px -8px 16px rgba(255, 255, 255, 0.7); /* Soft shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.project-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.15), 
+                -12px -12px 24px rgba(255, 255, 255, 0.8);
+}
+
+/* Project Images */
+.project-box img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Titles */
+.project-box figcaption {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4b4b4b;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+    }
+
+    .project-box {
+        width: 90%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -91,28 +180,77 @@
     <!-- Profile Picture -->
     <img src="hk1.png" alt="hello kitty" class="hk-pic">
     
-    <p>Welcome to my world!</p>
     
     <h2>me = creativity + entrepreneurship + social impact</h2>
 
-    <!-- Content Section -->
-    <div class="content">
-        
-        <!-- Past Projects Section -->
-        <h3>Past Projects</h3>
-        <a href="https://opensea.io/collection/bnfts-bobcat">
-            1. NYU Violet DAO Bobcat NFTs Collection
-        </a>
-        <br>
-        <img src="bobcat.png" alt="Bobcat NFT Project" width="300">
+    <!-- Projects Section -->
+    <div class="projects-container">
 
-        <!-- Contact Section -->
-        <h3>Contact Me</h3>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/cecilia-yiyue-chen/">LinkedIn</a></li>
-        </ul>
+        <!-- First Project -->
+        <div class="project-box">
+            <figure>
+                <figcaption>NYU Violet DAO Bobcat NFTs Collection</figcaption>
+                <a href="https://opensea.io/collection/bnfts-bobcat">
+                    <img src="bobcat.png" alt="Bobcat NFT Project" width="100%">
+                </a>
+            </figure>
+        </div>
+
+        <!-- Second Project -->
+        <div class="project-box">
+            <figure>
+                <figcaption>Homie: Connecting Students to Walk Home Together</figcaption>
+                <a href="https://devpost.com/software/homie-pk4r2v">
+                    <img src="homie.jpg" alt="Homie App Screenshot" width="100%">
+                </a>
+            </figure>
+        </div>
 
     </div>
 
+    <!-- DiceBear Avatar Section -->
+    <img id="avatar" class="avatar" alt="Pixel Art Avatar">
+    <br>
+    <button class="avatar-button" onclick="getAvatar()">✨ Generate Your Avatar ✨</button>
+    
+<!-- Contact Section -->
+<h3>
+    <details class="connect-details">
+        <summary>Connect with Me</summary>
+        <a href="https://www.linkedin.com/in/cecilia-yiyue-chen/" target="_blank">LinkedIn</a>
+    </details>
+</h3>
+
+
+    <script>
+        function getAvatar() {
+            // Generate a random seed for uniqueness
+            const randomSeed = Math.random().toString(36).substring(2, 10);
+
+            // Construct the API URL
+            const apiUrl = `https://api.dicebear.com/6.x/pixel-art/svg?seed=${randomSeed}`;
+
+            // Fetch the SVG from the API
+            fetch(apiUrl)
+                .then(response => response.text())  // Convert response to text (since it's SVG)
+                .then(svgData => {
+                    // Convert SVG string to a data URL
+                    const encodedSvg = encodeURIComponent(svgData);
+                    const dataUrl = `data:image/svg+xml,${encodedSvg}`;
+
+                    // Update the image source
+                    document.getElementById("avatar").src = dataUrl;
+                })
+                .catch(error => console.error("Error fetching avatar:", error));
+        }
+
+        // Load an avatar when the page first loads
+        getAvatar();
+    </script>
+
+<h3>🌟 Homework write up 🌟: <br />
+    HTML: details - expandable section that allows us to toggle hidden content without needing JavaScript<br />
+    CSS: filter (drop-shadow) - adds a shadow effect to an element while maintaining the shape of its content
+     </h3>
 </body>
 </html>
